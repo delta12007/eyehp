@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .booking-form {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            max-width: 400px;
+            width: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .booking-form:hover {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: calc(100% - 10px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+        }
+
+        .form-group input[type="text"]:hover,
+        .form-group input[type="number"]:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: #007bff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="booking-form">
+    <h2>Book Appointment</h2>
+    <form action="submit.php" method="post">
+        <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <input type="number" id="age" name="age" placeholder="Age" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Phone Number" required>
+
+        </div>
+        <div class="form-group">
+            <select id="doctor" name="doctor" required>
+                <option value="">Select Doctor</option>
+                <option value="Dr. John Doe">Dr. John Doe</option>
+                <option value="Dr. Jane Smith">Dr. Jane Smith</option>
+                <!-- Add more doctors as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea id="reason" name="reason" rows="6" placeholder="Reason for Consultation" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Book Appointment</button>
+    </form>
+</div>
+
+</body>
+</html>
